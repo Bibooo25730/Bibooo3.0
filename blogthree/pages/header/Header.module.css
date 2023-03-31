@@ -1,0 +1,26 @@
+.header{
+    padding: 5% 0%;
+   
+    
+}
+.nav_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftButton{
+    border-radius:20em 0px 0px 20em;
+}
+.leftButton,.rightButton{
+    padding: 1%;
+    background-color: #222222;
+}
+.rightButton{
+    
+    border-radius:0em 20em 20em 0em;
+}
+.li{
+    display: inline-block;
+    color: white;
+    line-height: 20px;
+}
