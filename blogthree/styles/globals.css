@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'zpix';
-  src: url(./zpix.ttf);
+  src: url(./Zpix.woff2);
   font-weight: 400;
   font-style: normal;
   font-display: block; 
@@ -31,12 +31,16 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
   font-family: 'zpix';
-  color: #0070f3;
+  color: #BF98D5;
   text-decoration: none;
 }
 
+.show{display: block;}
+.hidden{display: none;}
+
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  color: rgb(241, 239, 239);
 }
 ul,li{
   list-style: none;
@@ -52,20 +56,46 @@ img {
   font-weight: 400;
   font-style: normal;
 }
-
+@font-face {
+  font-family: ic;
+  src: url("//at.alicdn.com/t/font_1832207_igi8uaupcus.eot");
+  src: url("//at.alicdn.com/t/font_1832207_igi8uaupcus.eot?#iefix") format('embedded-opentype'),url("//at.alicdn.com/t/font_1832207_igi8uaupcus.woff2") format('woff2'),url("//at.alicdn.com/t/font_1832207_igi8uaupcus.woff") format('woff'),url("//at.alicdn.com/t/font_1832207_igi8uaupcus.ttf") format('truetype'),url("//at.alicdn.com/t/font_1832207_igi8uaupcus.svg#ic") format('svg')
+}
 .icon{
-  font-family: icomoon!important;
+    font-family: icomoon!important;
     font-style: normal;
     font-weight: 400;
+    color: #BF98D5;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
+.ic {
+  font-family: ic!important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  width: 1.25em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1
+}
 .icon-brightness-moon:before {
   content: "\e901";
 }
 .icon-brightness-sun:before {
   content: "\e902"
+}
+.icon-paper-plane:before {
+  content: "\e910";
+}
+.i-calendar:before {
+  content: "\e812";
+}
+.i-pen:before {
+  content: "\f071";
 }

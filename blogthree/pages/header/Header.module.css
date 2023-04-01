@@ -1,10 +1,9 @@
 .header{
     padding: 5% 0%;
-   
-    
 }
 .nav_container{
     display: flex;
+    padding: 0;
     justify-content: center;
     align-items: center;
 }
@@ -12,7 +11,10 @@
     border-radius:20em 0px 0px 20em;
 }
 .leftButton,.rightButton{
-    padding: 1%;
+
+    box-shadow: 0 0 10px rgb(241, 239, 239);
+    padding: 1% 0%;
+    margin: 0 1%;
     background-color: #222222;
 }
 .rightButton{
@@ -23,4 +25,50 @@
     display: inline-block;
     color: white;
     line-height: 20px;
+    padding: 0 1em;
+    cursor: pointer;
+}
+.img{
+    position: relative;
+    border-radius: 50%;
+    animation: activePic .8s  ease-in;
+    transition:.3s ease-out;
+}
+.liimg{
+    position: relative;
+}
+.liimg::after{
+    content: "首页";
+    color: transparent;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    font-weight: bolder;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    border-radius: 50%;
+    cursor: pointer;
+    /* filter: blur(2.5em);  */
+
+}
+.liimg:hover::after{
+    color: #222222;
+    height: 20%;
+    background-color: transparent;
+}
+.img:hover{
+    box-shadow: 0 0 30px #f20c00;
+    transform: scale(1.1);
+}
+
+@keyframes activePic {
+    form{
+        transform: rotate(0deg); 
+    }
+    to{
+        transform: rotate(360deg);
+        box-shadow: 0 0 35px #f20c00;
+
+    }
 }
