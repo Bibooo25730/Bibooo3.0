@@ -45,6 +45,8 @@ a:hover {
 ul,li{
   list-style: none;
   font-family: 'zpix';
+  padding: 0;
+  margin: 0;
 }
 img {
   max-width: 100%;

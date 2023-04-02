@@ -1,10 +1,6 @@
 ### 文章列表
 
 我想一个 card 里面是一个图片，然后标题在中间，可以访问，就是在想一个问题，如果图片过多，那我网站不是很卡，可能到时候要做一个分页组件，我逻辑还是后端写吧，下一页就是一个请求，这样好一点。如果直接给所有文章，我前端做的话，可能对网站不是很友好。
-clip-path: polygon(0 0,92% 0%,100% 100%,0% 100%);
-
-
-
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
