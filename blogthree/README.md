@@ -3,6 +3,10 @@
 我想一个 card 里面是一个图片，然后标题在中间，可以访问，就是在想一个问题，如果图片过多，那我网站不是很卡，可能到时候要做一个分页组件，我逻辑还是后端写吧，下一页就是一个请求，这样好一点。如果直接给所有文章，我前端做的话，可能对网站不是很友好。
 
 
+## 想到数据库了
+我记得我上次写的时候，数据库部署的时候，数据是空的，我只能手动引入，幸好当时要用的数据还比较少，所以没有什么大问题，也没想到这件事，而且也写了后台管理，但是我现在的话要解决这个问题，暂时没有啥好想法，只能用云数据了。
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

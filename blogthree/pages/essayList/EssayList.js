@@ -67,10 +67,12 @@ export default function EssayList() {
                                         </div>
                                    </div>
                               </div>
+          
                          </div>
                          </div>
-
+                     
           </article>
+          
      )
 }
 

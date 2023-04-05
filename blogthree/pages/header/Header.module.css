@@ -1,8 +1,9 @@
 .header{
     padding-top: 2%;
-    padding-bottom: 1%;
+    padding-bottom: calc(100% / 45);
 }
 .nav_container{
+   
     display: flex;
     padding: 0;
     justify-content: center;
@@ -88,7 +89,46 @@
     width: 100%;
     box-shadow: 0 0 0.5rem rgba(0,0,0,.5);
 }
-
+/* 左边导航栏 */
+.leftdiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #071D2C;
+    z-index: 2;
+    
+}
+.leftContainer{
+    padding: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.leftTop{
+    margin: 4%;
+}
+.leftfotter{
+    width: 100%;
+    text-align: center;
+    /* background-color: #131313; */
+}
+.leftContainers{
+    width: 100%;
+}
+.leftbody{
+    width: 100%;
+}
+.leftContainers  li{
+    text-align: center;
+    line-height: 4em;
+}
+.leftContainers  li:hover{
+    background-color: #071D2C;
+}
 @keyframes activePic {
     form{
         transform: rotate(0deg); 

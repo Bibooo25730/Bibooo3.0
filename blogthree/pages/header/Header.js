@@ -12,6 +12,32 @@ export default  function Header(){
    }
      return (
         <header className={header.header}>
+         {/* 左边 */}
+       
+          <div className={header.leftdiv}>
+           <div className={header.leftContainer}>
+             <div className={header.leftTop}>
+              <a href='#'><Image className={header.img} src={ActivePic} alt="headPic" priority  width={120}
+                height={120}></Image></a>
+              </div>
+              <div className={header.leftbody}>
+                 <ul className={header.leftContainers}>  
+                  <li> <a href=''>工具箱</a> </li>
+                  <li><a href=''>关于</a></li>
+                  <li> <a href=''>归档</a></li>
+                  <li> <a>友链</a></li>
+                  <li><i className={'icon icon-paper-plane'}></i>  </li>
+                  
+                 </ul>
+              </div>
+              <div className={header.leftfotter}>
+                   <a href=''> <i className={'ic icon i-github'}></i> </a>
+                   
+              </div>
+            </div>
+            
+        
+          </div>
             <nav>
                <ul className={header.nav_container}>
                   <div className={[`${header.leftButton} animate__animated animate__fadeInLeft`]}>
@@ -20,6 +46,8 @@ export default  function Header(){
                   </li>
                   <li className={header.li }> <a href=''>工具箱</a> </li>
                   <li className={header.li }><a href=''>关于</a></li>
+                  
+                  
                   </div>
                  {/* 手机端展示 这里写的有问题 */}
                  <li className={header.Phone_SITE}>
@@ -33,9 +61,7 @@ export default  function Header(){
                    </div>
                      <div className={'ic  i-search'}></div>
                  </li>
-                  
-               
-                 
+                    
                   <li className={header.li , header.liimg }> 
                   <a href='#'><Image className={header.img} src={ActivePic} alt="headPic" priority  width={120}
       height={120}></Image></a>
@@ -47,6 +73,9 @@ export default  function Header(){
                   </div>
                </ul>
             </nav>
+          
         </header>
+       
      )
 }
+
