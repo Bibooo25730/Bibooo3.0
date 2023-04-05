@@ -2,7 +2,8 @@ import essayList from './Essaylist.module.css'
 import Image from 'next/image'
 export default function EssayList() {
      return (
-          <article className={essayList.container}>
+
+          <article className={[`${essayList.container} animate__animated animate__bounceInUp `]}>
                <div>
                     <h1 className={essayList.h1}>文章列表</h1>
                </div>
@@ -72,3 +73,4 @@ export default function EssayList() {
           </article>
      )
 }
+

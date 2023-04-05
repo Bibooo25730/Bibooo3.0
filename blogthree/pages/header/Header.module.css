@@ -62,6 +62,32 @@
     box-shadow: 0 0 30px #f20c00;
     transform: scale(1.1);
 }
+.Phone_SITE{
+    display: none;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+}
+.lines{
+    line-height: 8px;
+    width: 1.5rem;
+    box-sizing: unset;
+}
+.line{
+    padding: 0;
+    margin: 0;
+    background: #222222;
+    display: inline-block;
+    height: .125rem;
+    left: 0;
+    position: relative;
+    border-radius: .0625rem;
+    top: 0;
+    transition: all .4s;
+    vertical-align: top;
+    width: 100%;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.5);
+}
 
 @keyframes activePic {
     form{
@@ -73,3 +99,25 @@
 
     }
 }
+
+@media (max-width: 768px){ 
+    .nav_container{
+        display: block;
+        flex-direction: column;
+    }
+    .liimg{
+        display: none;
+    }
+    .leftButton,.rightButton{
+        box-shadow: none !important;
+        background-color: transparent !important;
+    }
+    .li{
+        display: none;
+    }
+    .Phone_SITE{
+        display: flex;
+        padding: 0 2%;
+        justify-content: space-between;
+    }
+ }

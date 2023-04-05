@@ -101,3 +101,6 @@ img {
 .i-pen:before {
   content: "\f071";
 }
+.i-search:before {
+  content: "\f0a8";
+}

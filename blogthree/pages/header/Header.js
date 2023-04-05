@@ -21,7 +21,21 @@ export default  function Header(){
                   <li className={header.li }> <a href=''>工具箱</a> </li>
                   <li className={header.li }><a href=''>关于</a></li>
                   </div>
-                
+                 {/* 手机端展示 这里写的有问题 */}
+                 <li className={header.Phone_SITE}>
+                 <div className={header.lines}>
+                     <span className={header.line}></span>
+                     <span className   ={header.line}></span>
+                     <span className={header.line}></span>
+                   </div>
+                   <div className={header.title}>
+                       <h3>{process.env.NEXT_PUBLIC_NAME}</h3>
+                   </div>
+                     <div className={'ic  i-search'}></div>
+                 </li>
+                  
+               
+                 
                   <li className={header.li , header.liimg }> 
                   <a href='#'><Image className={header.img} src={ActivePic} alt="headPic" priority  width={120}
       height={120}></Image></a>
