@@ -18,7 +18,7 @@ export default function EssayList() {
                               </div>
                               <div className={essayList.cardRight}>
                                    <div className={essayList.info}>
-                                        <div >
+                                        <div>
                                              <div className={essayList.calendarL}>
                                                   <i className={'ic  i-calendar'} title='2022-2-12'>
                                                   </i>

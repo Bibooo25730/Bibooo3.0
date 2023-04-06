@@ -1,9 +1,16 @@
 .header{
     padding-top: 2%;
     padding-bottom: calc(100% / 45);
+    height: 100vh;
+    background-image: url('../../public/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image .8s ease;
+    opacity: 1;
+    filter: brightness(.8) contrast(110%) saturate(110%);
 }
 .nav_container{
-   
+    /* animation:  rotate 2s  infinite; */
     display: flex;
     padding: 0;
     justify-content: center;
@@ -64,7 +71,7 @@
     transform: scale(1.1);
 }
 .Phone_SITE{
-    display: none;
+     display: none;
     /* flex-direction: column; */
     align-items: center;
     justify-content: space-around;
@@ -93,11 +100,12 @@
 .leftdiv{
     position: absolute;
     top: 0;
-    left: 0;
+    left: -60%;
     width: 60%;
     height: 100%;
     background-color: #071D2C;
-    z-index: 2;
+    z-index: 1;
+    transition: left 1s ease-in;
     
 }
 .leftContainer{
@@ -129,6 +137,20 @@
 .leftContainers  li:hover{
     background-color: #071D2C;
 }
+.titleName{
+    text-align: center;
+    padding: 2%;
+}
+.titleName h3{
+    font-size: 3rem;
+    transition: font-size 1s ease-in;
+}
+.titleName h3:hover{
+    font-size: 3.5rem;
+}
+.titleName p{
+    font-size: 1.5rem;
+}
 @keyframes activePic {
     form{
         transform: rotate(0deg); 
@@ -159,5 +181,10 @@
         display: flex;
         padding: 0 2%;
         justify-content: space-between;
+    }
+ }
+ @media (min-width: 768px){ 
+    .leftdiv{
+        display: none;
     }
  }
