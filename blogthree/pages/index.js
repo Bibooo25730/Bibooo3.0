@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import  Header   from './header/Header'
-import EssayList from './essayList/EssayList'
+// import  Header   from './header/Header'
+// import EssayList from './essayList/EssayList'
 import styles from '@/styles/Home.module.css'
-
+// import ReactFullpage from '@fullpage/react-fullpage';
+import Fullpage from "./tolist/list"
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -19,8 +20,10 @@ export default function Home() {
         <title>{process.env.NEXT_PUBLIC_TITLE}</title>
       </Head>
       <main className={styles.main}>
-         <Header/>
-         <EssayList/>
+         {/* <Header/> */}
+         <Fullpage/>
+         {/* <EssayList/> */}
+        
       </main>
     </>
     
