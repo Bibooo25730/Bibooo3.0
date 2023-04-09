@@ -30,7 +30,9 @@ body {
   /* overflow-x: hidden; */
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  scroll-behavior: smooth;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: zpix;

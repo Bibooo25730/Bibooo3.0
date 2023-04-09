@@ -1,6 +1,12 @@
 import essayList from './Essaylist.module.css'
 import Image from 'next/image'
+import {useRouter}  from 'next/router';
 export default function EssayList() {
+     const router = useRouter();
+     // 文章详情
+     const goTob = ()=>{
+          router.push('/essayList/Essaycom')
+     }
      return (
 
           <article id='article' className={[`${essayList.container} animate__animated animate__bounceInUp `]}>
@@ -28,7 +34,7 @@ export default function EssayList() {
                                                   <span>220字</span>
                                              </div>
                                         </div>
-                                        <div className={essayList.title}>
+                                        <div className={essayList.title} onClick={goTob}>
                                              <h1>hello word</h1>
                                              <p>tdsadsaaaaaaaaaasaaaaaasaaaaaasaaaaaasaaaaaasaaaaaasaaaaaasaaaaaadsadasdastdsadsaaaaaaaaaadsadasdastdsadsaaaaaaaaaadsadasdastdsadsaaaaaaaaaadsadasdastdsadsaaaaaaaaaadsadasdas</p>
                                         </div>

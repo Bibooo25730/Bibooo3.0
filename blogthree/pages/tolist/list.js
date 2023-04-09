@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from '../header/Header';
 import EssayList from '../essayList/EssayList';

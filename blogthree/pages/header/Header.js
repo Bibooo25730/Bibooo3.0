@@ -22,8 +22,17 @@ export default function Header(props) {
   function handleContaer(e) {
     leRef.current.style.left = -60 + '%';
   }
+  //指定位置
+  function loction(){
+    if(window.location.hash = '#Essaycom'){
+      window.location.hash = ''
+    }
+    window.location.hash = "#Essaycom";
+  }
+
   function handlePage(){
-     full.moveSectionDown()
+    full?full.moveSectionDown():loction();
+    
   }
 
         return (
