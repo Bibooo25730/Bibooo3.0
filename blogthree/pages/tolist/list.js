@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from '../header/Header';
-import EssayList from '../essayList/EssayList';
+// import EssayList from '../essayList/EssayList';
+import Color from "../Colorpicker/Colorpick"
 import list from './list.module.css'
 const Fullpage = () => (
   <ReactFullpage
@@ -16,7 +17,8 @@ const Fullpage = () => (
             < Header full={fullpageApi}/>
           </div>
           <div className="section">
-          <EssayList/>
+          {/* <EssayList/> */}
+          < Color/>
           </div>
         </ReactFullpage.Wrapper>
       );

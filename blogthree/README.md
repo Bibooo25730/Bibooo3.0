@@ -6,8 +6,13 @@
 ## 想到数据库了
 我记得我上次写的时候，数据库部署的时候，数据是空的，我只能手动引入，幸好当时要用的数据还比较少，所以没有什么大问题，也没想到这件事，而且也写了后台管理，但是我现在的话要解决这个问题，暂时没有啥好想法，只能用云数据了。
 
-## 文章页
-我记得有markdown的输出，我就直接在页面填个组件就行，
+<!-- ## 文章页
+我记得有markdown的输出，我就直接在页面填个组件就行， -->
+
+## 拾色器
+文章页就不做了，我有博客啊，虽然是用别人的框架搭建的，还是用了那么多天了，没必要再搞一个于是我打算做一个拾色器。
+想法：我知道 canvas可以获取那个rgb数组，我用触摸事件对应的 x，y 然后再获取那个rgb可能要算一下对应的rgb应该就可以了。
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

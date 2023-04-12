@@ -1,5 +1,4 @@
 import Header from "../header/Header"
-import ReactFullpage from '@fullpage/react-fullpage';
 import essaycom from "./Essaycom.module.css"
 
 
