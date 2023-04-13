@@ -78,7 +78,9 @@
 .imgol{
     border: 10px solid white;
     position: relative;
+    cursor:all-scroll;
 }
+
 .cardsm{
  position: absolute;
  top: 0;
@@ -89,5 +91,5 @@
  border-left: 10px solid white;
  border-bottom: 10px solid white;
 border-right: 2px solid white;
- background-color: red;
+
 }
