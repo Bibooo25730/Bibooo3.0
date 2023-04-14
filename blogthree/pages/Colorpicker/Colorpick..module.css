@@ -109,6 +109,10 @@ border-right: 2px solid white;
     border-radius: 100%;
     padding: 20%;
     margin: 5% 0;
+    transition: padding .5s ease;
+}
+.btn:hover{
+    padding: 21%;
 }
 .btn > i{
     font-size: 50px;

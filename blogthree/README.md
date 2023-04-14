@@ -1,7 +1,8 @@
 ### 功能
 
 - 拾色器
-
+https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper
+使用新特性（实验性技术） 吸管
 
 
 
