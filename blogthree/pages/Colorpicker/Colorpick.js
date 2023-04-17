@@ -74,14 +74,25 @@ export default function ColorPick() {
             pref.current.src = evt.currentTarget.result;
             setprefboolen(prfboolen = 'block')
    
-         }
-         console.log(files)
+         }   
     }
+    function handleExit(){
+
+        pref.current.src = '';
+        // 输出第一次上传的文件，再次上传相同文件，无法触发 change 事件
+        inpref.current.value ='';
+        setprefboolen(prfboolen = 'none')
+
+    }
+    // 上传压缩图片接口
+    function handleUploadServer(){
+
+    }   
     return (
         <div className={Colorcs.Colorcontainer}>
             <div className={Colorcs.name}>
                 <div className={Colorcs.Contas}>
-                    <i className={'iconfont icon-yanse'}></i> <h1>图片拾色器</h1>
+                    <i className={'iconfont icon-yanse'}></i> <h1>图片拾色器+压缩</h1>
                 </div>
               
                 <div className={Colorcs.ShangC}>
@@ -130,11 +141,11 @@ export default function ColorPick() {
                     <div className={Colorcs.title}>
                         <div className={Colorcs.icon}>
                              <i  className={' iconfont icon-point'}></i>
-                             <span className={Colorcs.toolip}>本网站会保障你的隐私安全，数据会在一定时间内自动删除</span>
+                             <span className={Colorcs.toolip}>本网站会保障你的隐私安全，数据会在一定时间内自动删除，并且会帮你压缩图片下载到你的电脑上面。</span>
                         </div>
                        
                     <h3>预览图片</h3>
-                     <a title="点击我上传">确定上传</a>
+                     <a title="点击我上传" onClick={handleUploadServer}>确定上传</a>
                         
                      
                     </div>
@@ -145,7 +156,7 @@ export default function ColorPick() {
                     <div className={Colorcs.res}>
                     <i title="重新上传" onClick={handleUpload} className={' iconfont icon-shangchuantupian'}></i>
                     </div>
-                 <a onClick={handle}>取消</a>
+                 <a onClick={handleExit}>取消</a>
                 </div>
                 </div>
                
