@@ -1,7 +1,7 @@
 // 测试
-function test(req,res,next){
-    res.send('13');
+function compression(req,res,next){
+    console.log('123',req)
 }
 module.exports = {
-    test
+    compression
 }
