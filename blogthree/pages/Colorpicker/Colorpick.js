@@ -13,6 +13,8 @@ export default function ColorPick() {
     let inpref = useRef(0);
     // 预览图
     let pref = useRef(0);
+    // 图片
+    let [imgs,setimgs] = useState(null);
     useEffect(() => {
         var c = document.getElementById("canvas");
         let ctxs = c.getContext("2d");
@@ -67,26 +69,40 @@ export default function ColorPick() {
          const { files } = e.target;
         //  FileRender 异步读取计算机文件
          const reader = new FileReader();
+         setimgs(imgs = files[0])
         //  readAsDataURL 指定 bold内容或file
          reader.readAsDataURL(files[0])
          reader.onload = (evt)=>{
             // 预览展示图片
             pref.current.src = evt.currentTarget.result;
             setprefboolen(prfboolen = 'block')
-   
+            
          }   
     }
     function handleExit(){
-
         pref.current.src = '';
         // 输出第一次上传的文件，再次上传相同文件，无法触发 change 事件
         inpref.current.value ='';
-        setprefboolen(prfboolen = 'none')
+        setprefboolen(prfboolen = 'none');
 
     }
     // 上传压缩图片接口
     function handleUploadServer(){
-
+         console.log(imgs);
+         fetch('http://localhost:8088/api/ComPress',{
+            method:'POST',
+            headers:{'Content-Type':imgs.type},
+            body:`files:${imgs}`
+         }).then((res)=>{
+            console.log(res)
+         })
+        //  let imgMime = '';
+        //  switch(imgs.type){
+        //     case 'image/png':
+        //         imgMime = imgs.type;
+        //     break;
+        //     case 'image/gif'
+        //  }
     }   
     return (
         <div className={Colorcs.Colorcontainer}>
