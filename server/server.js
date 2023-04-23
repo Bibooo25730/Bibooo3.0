@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cors()); //注入 cors 模块解决跨域
 // 测试
 app.get("/",(req,res)=>{
-	res.send("Hi Hello word");
+	res.send("Hi Hello word123");
 })
 app.use("/",routes);
 app.listen(PORT, () => {
