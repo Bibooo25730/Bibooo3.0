@@ -1,9 +1,10 @@
-const Jimp = require("jimp");
-const fs = require("fs");
+
+
  function compression(req,res,next){
-    console.log(req.body)
+    console.log(req.file)
+    // console.log(req)
     // 当前时间创建的图片
-    let time = Date.now();
+    // let time = Date.now();
 //     Jimp.read("../public/cs.png")
 //   .then((lenna) => {
 //     lenna.quality(60)
@@ -13,7 +14,7 @@ const fs = require("fs");
 //   .catch((err) => {
 //     res.send(err);
 //   });
-  let path = time + 'lena-small-bw.jpg';
+  // let path = time + 'lena-small-bw.jpg';
 //   setTimeout(()=>{
 //     fs.unlink(path,function(err){
 //         console.log('File deleted!');
