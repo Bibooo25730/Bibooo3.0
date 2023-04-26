@@ -92,16 +92,18 @@ export default function ColorPick() {
     }
     // 下载压缩图片接口
    async function handleUploadServer() {
-    console.log(imgs)
-        const res = await fetch('http://localhost:8080/api/download', {
+    let img = {
+        imgName:imgs.name
+    }
+  let res = await  fetch('http://localhost:8080/api/download', {
             method: 'POST',
-            // headers:{
-            //     'Content-Type':'application/json'
-            // },
-            body:'{itrem:dasd}'
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(img)
         })
-        let resule = await res.json();
-        console.log(resule)
+      let resule =  await res.arrayBuffer()
+      console.log(resule)
     }
     return (
         <div className={Colorcs.Colorcontainer}>
@@ -161,7 +163,8 @@ export default function ColorPick() {
 
                         <h3>下载压缩图片</h3>
                         <a title="点击我下载" onClick={handleUploadServer}>确定下载</a>
-
+                        {/* 下载 */}
+                        <a id="downd" href="http://localhost:8080/1682521287530-828244993.jpg"  download>下载</a>
 
                     </div>
 

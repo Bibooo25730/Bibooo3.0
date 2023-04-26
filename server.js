@@ -6,13 +6,14 @@
 const express = require("express");
 const cors = require("cors")
 // const bodyParser = require("body-parser");
-const routes = require("../router/router");
+const routes = require("./router/router.js");
 const app = express();
 const PORT = process.env.PORT || 8080;
 // app.use(express.text({type:"*/*"}))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
+// 设置静态目录
+app.use(express.static(__dirname + '/public'))
 app.use(cors()); //注入 cors 模块解决跨域
 
 // 测试
