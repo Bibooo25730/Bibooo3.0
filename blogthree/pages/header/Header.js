@@ -104,7 +104,7 @@ export default function Header(props) {
             <p>{process.env.NEXT_PUBLIC_TiTlEP}</p>
 
           </div>
-          <div className={header.xia} title="下滑"><a onClick={handlePage}>↓</a></div>
+          <div className={header.xia} title="下滑"><b onClick={handlePage}>↓</b></div>
         </header>
      
         )

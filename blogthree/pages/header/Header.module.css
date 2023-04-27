@@ -156,16 +156,17 @@
 }
 .xia{
     position: absolute;
-    left: 48%;
+    left: calc(50% - 43px);
     bottom: 20%;
     color: #395915;
     font-size: 5rem;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     animation: Topup 2s infinite ease-in;
     cursor: pointer;
 }
+
 @keyframes Topup {
       from {
        bottom: 40%;

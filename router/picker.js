@@ -29,6 +29,7 @@ const upload = multer({ storage: storage })
 // 上传图片
 router.post('/ComPress', upload.single('image'), compression);
 router.post('/download',dowmload)
+router.post('/remove',remove);
 function compression(req, res, next) {
   // 压缩图片
   Jimp.read(paths)
@@ -45,14 +46,30 @@ function compression(req, res, next) {
 }
 // 下载压缩图片接口
 function dowmload(req,res){  // 获取 截图
-  // let img = req.body;
-  // if(img.imgName == name){
-  //   let imgN = {
-  //       urL:'http://localhost:8080/'+ uniqueSuffix + '.jpg'
-  //   }
-  // res.send( imgN)
-  // }
-  res.sendFile("D:/code/myBolg3.3/public/1682524084559-696858962.jpg")
-    
+  let img = req.body;
+  if(img.imgName == name){
+    res.sendFile(paths);
+    fs.unlink(paths,(err,data)=>{
+      if (err) {
+        console.log(err);
+      } else{
+        console.log('删除文件成功');
+      }
+    })
+  } 
+}
+//取消图片接口，并删除
+function remove(req,res){
+  let img = req.body;
+  console.log(img.imgName,name)
+  if(img.imgName == name){
+    fs.unlink(paths,(err,data)=>{
+      if (err) {
+        console.log(err);
+      } else{
+        console.log('删除文件成功');
+      }
+    })
+}
 }
 module.exports = router;
