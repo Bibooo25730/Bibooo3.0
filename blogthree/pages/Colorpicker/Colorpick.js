@@ -75,39 +75,25 @@ export default function ColorPick() {
             });
     }
 
-    function handleUpload() {
+   function handleUpload() {
         inpref.current.click()
     }
-    function handleUploads(){
-        setuplaod(uplaod=true)
+    async function handleUploads(e){
         inpref.current.click()
+        let img = {
+            imgName:imgs.name
+        }
+        let rem = await fetch('http://localhost:8080/api/remove', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(img)
+        })
+        let result = await rem.json()
     }
     async function handleChange(e) {
-        if(uplaod){
             sedFile(e)
-            const { files } = e.target;
-            let img = {
-                imgName: files[0].name
-            }
-            let rem = await fetch('http://localhost:8080/api/remove', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(img)
-            })
-            if (rem.ok) {
-                console.log('已经删除了你上传的图片')
-                
-            } else {
-                console.log(rem)
-            }
-            
-        }else{
-            sedFile(e)
-        }
-    
-        
     }
     // 发送图片函数
    async function sedFile(e){
@@ -123,7 +109,6 @@ export default function ColorPick() {
             // 上传展示图片
             pref.current.src = evt.currentTarget.result;
             var img = document.getElementById("imgol");
-            console.log(evt.currentTarget.result)
             img.src = evt.currentTarget.result
             setprefboolen(prfboolen = 'block')
             drawIm()

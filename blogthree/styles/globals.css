@@ -34,6 +34,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   scroll-behavior: smooth;
+  caret-color: rgba(0, 0, 0, 0)
 }
 /* .section{
   background-color: #111111 !important  ;
@@ -42,17 +43,20 @@ h1,h2,h3,h4,h5,h6 {
   font-family: zpix;
   line-height: 1.7;
   line-height: 1.1;
-  font-weight: 700
+  font-weight: 700;
+  caret-color: rgba(0, 0, 0, 0)
 }
 b{
   margin: 0;
   padding: 0;
   display: block;
   text-align: center;
+  caret-color: rgba(0, 0, 0, 0)
 }
 * {
   box-sizing: border-box;
   font-family: 'zpix';
+  caret-color: rgba(0, 0, 0, 0)
 }
 
 a {

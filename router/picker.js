@@ -4,11 +4,12 @@ const fs = require("fs");
 const router = express.Router();
 const server = require("../server/colorpicker");
 const multer = require("multer");
+const pathpb = require('path');
 // const app = express();
 // app.use(express.json())
 // app.use('/static', express.static(__dirname + '/public'));
 const path = 'D:/code/myBolg3.3/public';
-let  uniqueSuffix = 0;
+let uniqueSuffix = 0;
 let paths = '';
 let name = '';
 const storage = multer.diskStorage({
@@ -18,18 +19,18 @@ const storage = multer.diskStorage({
   },
   // 设置文件名称
   filename: function (req, file, cb) {
-    console.log('中间件',file)
-    name =file.originalname;
+    console.log('中间件', file)
+    name = file.originalname;
     uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
     cb(null, uniqueSuffix + '.jpg');
-    return paths = path + '/'  + uniqueSuffix + '.jpg';
+    return paths = path + '/' + uniqueSuffix + '.jpg';
   }
 })
 const upload = multer({ storage: storage })
 // 上传图片
 router.post('/ComPress', upload.single('image'), compression);
-router.post('/download',dowmload)
-router.post('/remove',remove);
+router.post('/download', dowmload)
+router.post('/remove', remove);
 function compression(req, res, next) {
   // 压缩图片
   Jimp.read(paths)
@@ -45,31 +46,41 @@ function compression(req, res, next) {
 
 }
 // 下载压缩图片接口
-function dowmload(req,res){  // 获取 截图
+function dowmload(req, res, next) {  // 获取 截图
   let img = req.body;
-  if(img.imgName == name){
-    res.sendFile(paths);
-    fs.unlink(paths,(err,data)=>{
+  const options = {};
+  console.log(img.imgName, name)
+  if (img.imgName == name) {
+    console.log(paths)
+    res.sendFile(paths, options, function (err) {
       if (err) {
-        console.log(err);
-      } else{
-        console.log('删除文件成功');
+        next(err);
+      } else {
+        fs.unlink(paths, (err, data) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log('删除文件成功');
+          }
+        })
+        next();
       }
     })
-  } 
+
+
+  }
 }
 //取消图片接口，并删除
-function remove(req,res){
+function remove(req, res) {
   let img = req.body;
-  console.log(img.imgName,name)
-  if(img.imgName == name){
-    fs.unlink(paths,(err,data)=>{
+  if (img.imgName == name) {
+    fs.unlink(paths, (err, data) => {
       if (err) {
         console.log(err);
-      } else{
-        console.log('删除文件成功');
+      } else {
+        res.send('删除成功')
       }
     })
-}
+  }
 }
 module.exports = router;
