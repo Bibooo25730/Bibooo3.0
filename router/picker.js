@@ -2,12 +2,7 @@ const express = require('express');
 const Jimp = require("jimp");
 const fs = require("fs");
 const router = express.Router();
-const server = require("../server/colorpicker");
 const multer = require("multer");
-const pathpb = require('path');
-// const app = express();
-// app.use(express.json())
-// app.use('/static', express.static(__dirname + '/public'));
 const path = 'D:/code/myBolg3.3/public';
 let uniqueSuffix = 0;
 let paths = '';

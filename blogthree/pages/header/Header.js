@@ -2,7 +2,7 @@ import header from './Header.module.css'
 import 'animate.css'
 import Image from 'next/image'
 import ActivePic from '../../public/activew.webp'
-import ReactFullpage from '@fullpage/react-fullpage';
+
 
 import { useState } from 'react';
 import { useRef } from 'react';
