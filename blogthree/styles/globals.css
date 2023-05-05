@@ -16,8 +16,14 @@
   height: 100% !important;
 }
 #__next .fp-is-overflow .fp-overflow.fp-auto-height, .fp-is-overflow .fp-overflow.fp-auto-height-responsive, .fp-is-overflow>.fp-overflow{
-  overflow: none !important;
+ width: 100% !important;
 }
+/* .fp-is-overflow .fp-overflow.fp-auto-height, .fp-is-overflow .fp-overflow.fp-auto-height-responsive, .fp-is-overflow>.fp-overflow {
+  overflow: hidden !important;
+}
+.fp-overflow{
+  min-height: auto !important;
+} */
 
 html,
 body {
@@ -39,6 +45,8 @@ body {
 /* .section{
   background-color: #111111 !important  ;
 } */
+input:focus{outline: none;}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: zpix;
   line-height: 1.7;
