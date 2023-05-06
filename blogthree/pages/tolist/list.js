@@ -4,6 +4,7 @@ import Header from '../header/Header';
 // import EssayList from '../essayList/EssayList';
 import Color from "../Colorpicker/Colorpick"
 import PotPlay from '../potPlay/potplay';
+import Rtc from "../rtc/rtc"
 const Fullpage = () => (
   <ReactFullpage
     //fullpage options
@@ -22,6 +23,9 @@ const Fullpage = () => (
           </div>
           <div className='section'>
             <PotPlay/>
+          </div>
+          <div className='section'>
+            <Rtc/>
           </div>
         </ReactFullpage.Wrapper>
       );
