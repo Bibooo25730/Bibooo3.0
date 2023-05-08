@@ -1,0 +1,110 @@
+
+.container{
+    margin: 5%;
+    height: 65%;
+    border: 1px solid #ccc;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapContainer{
+    width: 100%;
+    display: flex;
+   
+   justify-content: space-between; 
+}
+.wrap{
+    height: 100%;
+    position: relative;
+}
+.video{
+    width: 100%;
+    height: 100%;
+}
+.left{
+    width: 60%;
+    /* background-color: #f1ddbc; */
+}
+.Rooms{
+   
+    text-align: center;
+}
+.shext{
+    width: 150px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+}
+.shext button{
+    cursor: pointer;
+   border: none;
+   padding: 10%;
+   background-color: #87CEEB;
+}
+.shext button:hover{
+    transition: transform 1s ease;
+    transform: scale(1.1);
+}
+.right{
+    width: 40%;
+    background-color: #f1ddbc;
+}
+
+.server{
+   display: flex;
+   justify-content: center;
+}
+#recId{
+    width: 70%;
+    display: block;
+    padding: 2%;
+}
+.btn{
+    display: block;
+}
+.chatcom{
+    height: 360px;
+    overflow: scroll;
+}
+.edit{
+    display: flex;
+    align-items: center;
+ }
+ #paragraph{
+    /* width: 90%; */
+    width: 100%;
+    caret-color: #FFFFFF;
+    height: 92%;
+    padding: 4%;
+    resize: none;
+    background-color: black;
+    color: #FFFFFF;
+    border-right: 0;
+}
+/* 评论 */
+.leftp,.rightp{
+    padding-top: 2%;
+}
+.leftp span,.rightp span{
+    font-size: 1.5em;
+    line-height: 1.5em;
+    display: block;
+}
+.leftp span {
+    color: rgb(239, 98, 98);
+}
+.rightp span{
+    color: rgb(228, 149, 121);
+
+}
+.rightp{
+    text-align: right;
+}
