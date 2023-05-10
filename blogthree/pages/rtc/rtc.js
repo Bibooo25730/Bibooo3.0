@@ -5,77 +5,82 @@ export default function Rtc() {
     // const peer = new Peer("Pick-an-id");
     let inRef = useRef();
     let secction = useRef();
-    let chatcom  = useRef();
+    let chatcom = useRef();
     let [peer, setPeer] = useState(null);
     // id 
     let [Pid, setId] = useState('');
+    let drops = useRef();
+    let [fileArr,setfileArr] = useState();
     // section
-    let [connser,setConn] = useState(null);
+    let [connser, setConn] = useState(null);
     useEffect(() => {
         const fn = async () => {
             const PeerJs = (await import('peerjs')).default;
-             let peers = new PeerJs();
-             setPeer(peer = peers)
-             peers.on("open",function(id){
+            let peers = new PeerJs();
+            setPeer(peer = peers)
+            peers.on("open", function (id) {
                 console.log(id)
                 secction.current.innerText = `状态为：对等ID:${id}`
-             })
+            })
             console.log(peers)
-             peer.on('connection',function(conn) {
+            peer.on('connection', function (conn) {
                 // 接受对方传来的数据
-                secction.current.innerText = `状态为：:连接成功 `  
-                conn.on('data', function(data) {
-                    
+                secction.current.innerText = `状态为：:连接成功 `
+                conn.on('data', function (data) {
+              
                     // let conn = peer.connect(data);
                     // setConn(connser = conn);
-                    console.log('收到的数据',data)                        
+                    console.log('收到的数据', data)
                     let lefttp = document.createElement('div');
                     lefttp.classList = [`${Rtclss.leftp}`];
                     let span = document.createElement('span');
-                    span.innerText = '：' + data  ;
+                    span.innerText = '：' + data;
                     lefttp.appendChild(span);
                     chatcom.current.appendChild(lefttp);
-               })
-            //    
-              conn.send('hello');
-               
-               setConn(connser = conn)
-               
-              })
-            
-              peer.on('DataConnection', function(conn) { 
-                conn.on('open', function() {
+                })
+                //    
+                conn.send('hello');
+
+                setConn(connser = conn)
+
+            })
+
+            peer.on('DataConnection', function (conn) {
+                conn.on('open', function () {
                     // Receive messages
-                    conn.on('data', function(data) {
-                      console.log('Received', data);
+                    conn.on('data', function (data) {
+                        console.log('Received', data);
                     });
-                
+
                     // Send messages
                     // conn.send('Hello!');
-                  });
-               });
-              peer.on('error',function(err){
+                });
+            });
+            peer.on('error', function (err) {
                 secction.current.innerText = `状态为：:${err.message}`
-                 console.log(err)
-               })
+                console.log(err)
+            })
             return peers;
         }
         fn();
+       
+        drop() 
+
     }, [])
     function handleServer() {
         //   获取房间号
         let value = inRef.current.value;
         let conn = peer.connect(value);
-        conn.on("open",()=>{
+        conn.on("open", () => {
             secction.current.innerText = `状态为：:连接成功}`
-            console.log('server',conn)
+            console.log('server', conn)
         })
         setConn(connser = conn)
-           
+
         // console.log(peer)
     }
-    function handleChange(e){
-         if(e.keyCode == 13){
+    function handleChange(e) {
+        if (e.keyCode == 13) {
             let value = e.target.value;
             let rightp = document.createElement('div');
             rightp.classList = [`${Rtclss.rightp}`];
@@ -83,11 +88,51 @@ export default function Rtc() {
             span.innerText = value + ':';
             rightp.appendChild(span);
             chatcom.current.appendChild(rightp);
-            console.log('打字',value);
-            console.log('con',connser);
-          connser.send(value);
-          
-         } 
+            console.log('打字', value);
+            console.log('con', connser);
+            connser.send(value);
+
+        }
+    }
+    // function handleDrag(e) {
+    //     console.log(e)
+    // }
+    // 上传文件
+    function upload(){
+        console.log(fileArr,connser)
+        // connser.send(fileArr)
+      let file = new Blob([fileArr]);
+      connser.send(file)
+    }
+    // 拖拽事件
+    function drop(){
+     let fileArrx = [];
+        function handleEvent(event) {
+            // 阻止事件的默认行为
+            event.preventDefault();
+            if (event.type === 'drop') {
+              // 文件进入并松开鼠标,文件边框恢复正常
+              drops.current.style.borderColor = 'yello'
+              for (let file of event.dataTransfer.files) {
+                console.log(file)
+                // 把文件保存到文件数组中
+                fileArrx.push(file)
+                setfileArr(fileArr = fileArrx);
+                // 初始化文件
+              }
+            } else if (event.type === 'dragleave') {
+              // 离开时边框恢复
+              drops.current.style.borderColor = '#a89b9b'
+            } else {
+              // 进入边框变为红色
+              drops.current.style.borderColor = 'red'   
+            }
+        }   
+       console.log(fileArr)
+       drops.current.addEventListener("dragenter",handleEvent);
+       drops.current.addEventListener("dragover",handleEvent);
+       drops.current.addEventListener("drop",handleEvent);
+       drops.current.addEventListener("dragleave",handleEvent)
     }
     return (
         <div className={Rtclss.container}>
@@ -99,15 +144,22 @@ export default function Rtc() {
                     </div>
                 </div>
                 <div className={Rtclss.right}>
-                <div ref={chatcom} className={Rtclss.chatcom} >
-                     {/* <div ref={lefttp} className={play.leftp}> <span ></span></div>
+                    <div ref={chatcom} className={Rtclss.chatcom} >
+                        {/* <div ref={lefttp} className={play.leftp}> <span ></span></div>
                      <div ref={rightp} className={play.rightp}><span></span></div> */}
-                     </div>
-                     <div className={Rtclss.edit}>   
-                          <input id={Rtclss.paragraph}  onKeyDown={handleChange}   placeholder="发送消息" rows="1" ></input>
-                      
-                     </div>
-                    <div>发送文件</div>
+                    </div>
+                    <div className={Rtclss.edit}>
+                        <input id={Rtclss.paragraph} onKeyDown={handleChange} placeholder="发送消息" rows="1" ></input>
+
+                    </div>
+                    <div  className={Rtclss.main}>
+                        <p className={Rtclss.drop_text}>拖拽文件到此上传文件/
+                            <span onClick={upload}>点击上传</span>
+                        </p>
+                        <div ref={drops}  className={Rtclss.drop_box}>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -119,7 +171,7 @@ export default function Rtc() {
                 </div>
 
             </div>
-            <div  ref={secction}>状态:</div>
+            <div ref={secction}>状态:</div>
         </div>
     )
 }
