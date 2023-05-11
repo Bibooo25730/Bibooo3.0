@@ -27,16 +27,31 @@ export default function Rtc() {
                 // 接受对方传来的数据
                 secction.current.innerText = `状态为：:连接成功 `
                 conn.on('data', function (data) {
-              
+                     if(typeof(data) === 'object'){
+                        console.log(data)
+                          let blob = new Blob([data[0]]);
+                          let reader = new FileReader();
+                          reader.readAsText(blob,"utf-8");
+                          let url = window.URL.createObjectURL(blob)
+                         const link = document.createElement("a");   
+                          link.style.display = 'none';
+                          link.href = url;
+                          link.setAttribute('download','out.md');
+                          document.body.appendChild(link);
+                          link.click();
+                          document.body.removeChild(link);
+                     }else{
+                        let lefttp = document.createElement('div');
+                        lefttp.classList = [`${Rtclss.leftp}`];
+                        let span = document.createElement('span');
+                        span.innerText = '：' + data;
+                        lefttp.appendChild(span);
+                        chatcom.current.appendChild(lefttp);
+                     }
                     // let conn = peer.connect(data);
                     // setConn(connser = conn);
-                    console.log('收到的数据', data)
-                    let lefttp = document.createElement('div');
-                    lefttp.classList = [`${Rtclss.leftp}`];
-                    let span = document.createElement('span');
-                    span.innerText = '：' + data;
-                    lefttp.appendChild(span);
-                    chatcom.current.appendChild(lefttp);
+                    console.log('收到的数据',typeof(data))
+                   
                 })
                 //    
                 conn.send('hello');
@@ -101,8 +116,8 @@ export default function Rtc() {
     function upload(){
         console.log(fileArr,connser)
         // connser.send(fileArr)
-      let file = new Blob([fileArr]);
-      connser.send(file)
+    //   let file = new Blob([fileArr]);
+      connser.send(fileArr)
     }
     // 拖拽事件
     function drop(){
